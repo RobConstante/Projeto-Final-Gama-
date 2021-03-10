@@ -1,14 +1,18 @@
-import requests;
-import json; 
-#Conexão SQL Server
+#importando biblioteca requests e dando alias rq
+import requests as rq
+import json
 import pyodbc
 
 class API(object):
     def getDataAPI(self, url):
-        send_url = url; 
-        request = requests.get(send_url)
-        result = request.json()
-        return result
+        #send_url = url; 
+        #request = requests.get(send_url)
+        #result = request.json()
+        
+        dados = rq.get(url)
+        dados2 = json.loads(dados.content)
+
+        return dados2
 
 class Database(object):
     conn ="";
@@ -17,28 +21,53 @@ class Database(object):
     def __init__(self, json_covid=None):
         self.connectDatabase()
 
-    def connectDatabase(self):
+    def connect(self):
         self.conn = pyodbc.connect('Driver={SQL Server};'
                       'Server=LOCALHOST;'
-                      'Database=BD_TESTE;'
-                      'UID=sa;'
-                      'PWD=sa;')
+                      'Database=Projeto_Final;'
+                      'UID=projeto;'
+                      'PWD=dados@ibge1;')
 
         self.cursor = conn.cursor()
     
-    def closeConnexionDatabase(self):
+    def close(self):
         self.conn.close()
 
-    def executeDatabase(self, query):
+    def execute(self, query):
         exec_query = query;
+
+        #cursor.fast_executemany = True
+        #cursor.executemany(exec_query)
+
         cursor.execute(exec_query)
         cursor.commit()
 
 class dataCovid(object):    
     current_data = None;
     top_countries= []
-    def __init__(self, json_covid=None):
-        self.updateToday()
+
+    def countries(self):
+        url = 'https://api.covid19api.com/countries'
+        api = API()
+        self.result = api.getDataAPI(url)
+        return self.result;
+
+    def data(self):
+        url = 'https://api.covid19api.com/summary'
+        api = API()
+        self.result = api.getDataAPI(url)
+        return self.result;
+    
+    def allData(self):
+        url = 'https://api.covid19api.com/all'
+        api = API()
+        self.result = api.getDataAPI(url)
+        return self.result;
+
+    
+
+    """def __init__(self, json_covid=None):
+        #self.updateToday()
 
     def updateToday(self):
         result = self.countries();
@@ -77,7 +106,7 @@ class dataCovid(object):
           if current_country["CountryCode"] == country:  
             result += f"{current_country['Country']} Total de mortes é {current_data['TotalDeaths']} \n"
             break
-      return result;
+      return result;"""
 
     def getTopConfirmed(self):
       self.topTen()
@@ -109,16 +138,11 @@ class dataCovid(object):
             break
       return result;
             
-    def countries(self):
-        url = 'https://api.covid19api.com/countries'
-        api = API()
-        self.result = api.getDataAPI(url)
-        return self.result;
 
-    def data(self):
-        url = 'https://api.covid19api.com/summary'
-        api = API()
-        self.result = api.getDataAPI(url)
-        return self.result;
         
-teste = dataCovid()
+teste = dataCovid().countries()
+
+print(teste[10]['ISO2'])
+print(teste[10]['Country'])
+
+Database.connect
