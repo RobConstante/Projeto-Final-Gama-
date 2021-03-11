@@ -140,9 +140,10 @@ class dataCovid(object):
             
 
         
-teste = dataCovid().countries()
+teste = dataCovid().allData()
 
-print(teste[10]['ISO2'])
-print(teste[10]['Country'])
+print(teste[0])
+#print(teste[10]['ISO2'])
+#print(teste[10]['Country'])
 
-Database.connect
+#Database.connect
