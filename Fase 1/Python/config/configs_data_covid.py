@@ -9,6 +9,7 @@ class DataCovid(object):
     current_data = None
     top_countries = []
     data_atual = date.today()
+    listaSemCasos = []
 
     #def __init__(self):
     #    self.updateToday()
@@ -36,31 +37,45 @@ class DataCovid(object):
         for linha in __listaReturn:
             values += linha
 
-        #print("Inicio Insert")
+        #print("Inicio Insert PAISES")
         self.consult.executeDatabase(f"INSERT INTO PAIS (COD_ISO2, NOME) VALUES {values}")
-        #print("Fim Insert")
+        #print("Fim Insert PAISES")
 
     def insertDados(self):
         countries = 'https://api.covid19api.com/countries'
         jsonC = self.api.getDataAPI(countries)
+        count = 0
 
-        url = 'https://api.covid19api.com/dayone/country/'
+        url = 'https://api.covid19api.com/total/dayone/country/'
 
         for country in jsonC:
             json = self.api.getDataAPI(url+country['Slug'])
 
             __lista = []
+            __lista2 = []
+            __lista3 = []
+
             __listaReturn = []
+            __listaReturn2 = []
+            __listaReturn3 = []
+
             values = ''
+            values2 = ''
+            values3 = ''
 
             for dados in json:
                 iso = str(country['ISO2']).replace("'", "") if country['ISO2'] else ""
-                data = datetime.strptime(dados['Date'][:10], '%Y-%m-%d').date() if dados['Date'] else ""
+                data = datetime.strptime(str(dados['Date'][:10]), '%Y-%m-%d').date() if dados['Date'] else ''
                 casos = int(dados['Confirmed']) if dados['Confirmed'] else ""
                 mortes = int(dados['Deaths']) if dados['Deaths'] else ""
-
                 add = f"('{iso}', '{data}', '{casos}', '{mortes}')"
-                __lista.append(add)
+                if len(__lista) < 1000:
+                    __lista.append(add)
+                elif len(__lista2) < 1000:
+                    __lista2.append(add)
+                else:
+                    __lista3.append(add)
+
 
             for row in __lista:
                 if row == __lista[len(__lista) - 1:len(__lista)][0]:
@@ -68,15 +83,49 @@ class DataCovid(object):
                 else:
                     __listaReturn.append(row + ',')
 
+            for row in __lista2:
+                if row == __lista2[len(__lista2) - 1:len(__lista2)][0]:
+                    __listaReturn2.append(row)
+                else:
+                    __listaReturn2.append(row + ',')
+
+            for row in __lista3:
+                if row == __lista3[len(__lista3) - 1:len(__lista3)][0]:
+                    __listaReturn3.append(row)
+                else:
+                    __listaReturn3.append(row + ',')
+
             for linha in __listaReturn:
                 values += linha
 
+            for linha in __listaReturn2:
+                values2 += linha
+
+            for linha in __listaReturn3:
+                values3 += linha
+
+            count += 1
             if values:
-                print(country['Country'])
+                print(count)
+                #print(country['Country'])
                 self.consult.executeDatabase(f"INSERT INTO CASOS (COD_ISO2, DATA, CASOS_CONFIRMADOS, MORTES) VALUES {values}")
             else:
                 print(country['Country'] + ": Sem casos registrados.")
-            # print("Fim Insert")
+                self.listaSemCasos.append(country['Country'])
+
+            if values2:
+                print(country['Country'] + ": Lista 2")
+                self.consult.executeDatabase(f"INSERT INTO CASOS (COD_ISO2, DATA, CASOS_CONFIRMADOS, MORTES) VALUES {values2}")
+            #else:
+            #    print("Sem lista2")
+
+            if values3:
+                print(country['Country'] + ": Lista 3\n")
+                self.consult.executeDatabase(f"INSERT INTO CASOS (COD_ISO2, DATA, CASOS_CONFIRMADOS, MORTES) VALUES {values2}")
+            #else:
+            #    print("Sem lista3\n")
+
+        print("Fim Insert")
 
 
 
