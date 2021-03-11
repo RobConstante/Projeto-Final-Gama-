@@ -1,25 +1,13 @@
-#importando biblioteca requests e dando alias rq
-import requests as rq
-import json
-import pyodbc
+from config.configs_api import Api
+from config.configs_data_covid import DataCovid
+from config.configs_database import Database
 
-class API(object):
-    def getDataAPI(self, url):
-        #send_url = url; 
-        #request = requests.get(send_url)
-        #result = request.json()
-        
-        dados = rq.get(url)
-        dados2 = json.loads(dados.content)
 
-        return dados2
+if __name__ == "__main__":
+    dadosCovid = DataCovid()
 
-class Database(object):
-    conn ="";
-    cursor = "";
-    
-    def __init__(self, json_covid=None):
-        self.connectDatabase()
+    # Insere os dados para a tabela de PAIS
+    #dadosCovid.insertPais()
 
     def connect(self):
         self.conn = pyodbc.connect('Driver={SQL Server};'
