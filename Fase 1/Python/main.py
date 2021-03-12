@@ -1,137 +1,85 @@
-from config.configs_api import Api
 from config.configs_data_covid import DataCovid
-from config.configs_database import Database
-
+import os
+import time
+from datetime import date
 
 if __name__ == "__main__":
-    dadosCovid = DataCovid()
-
     # Insere os dados para a tabela de PAIS
     #dadosCovid.insertPais()
 
-    def connect(self):
-        self.conn = pyodbc.connect('Driver={SQL Server};'
-                      'Server=LOCALHOST;'
-                      'Database=Projeto_Final;'
-                      'UID=projeto;'
-                      'PWD=dados@ibge1;')
+    # Insere os dados para a tabela de CASOS e salva um arquivo .txt com os Países sem dados na API.
+    #dadosCovid.insertDados()
 
-        self.cursor = conn.cursor()
-    
-    def close(self):
-        self.conn.close()
+    # Adiciona o summary do dia a tabela.
+    #dadosCovid.updateToday()
 
-    def execute(self, query):
-        exec_query = query;
+    # Dados da evolução diária de Casos dos top 10 países.
+    #res = dadosCovid.getTopNewConfirmedSQL()
 
-        #cursor.fast_executemany = True
-        #cursor.executemany(exec_query)
+    # Dados da evolução diária de Mortes dos top 10 países.
+    #res = dadosCovid.getTopNewDeathsSQL()
 
-        cursor.execute(exec_query)
-        cursor.commit()
+    # Dados do total de mortes dos top 10 países.
+    #res = dadosCovid.getTopDeaths()
 
-class dataCovid(object):    
-    current_data = None;
-    top_countries= []
+    # Dados do total de casos dos top 10 países.
+    #res = dadosCovid.getTopConfirmed()
 
-    def countries(self):
-        url = 'https://api.covid19api.com/countries'
-        api = API()
-        self.result = api.getDataAPI(url)
-        return self.result;
+    start = True
+    data_atual = date.today()
+    while start:
+        os.system('cls')
+        dadosCovid = DataCovid()
+        print(120 * "-")
+        print("|", "COVID-19", "|", sep=55 * " ", end="\n" + 120 * "-" + "\n")
+        print("( 1 ) Evolução diária dos dez países com maior número de casos de COVID-19.")
+        print("( 2 ) Evolução diária dos dez países com maior número de óbitos por COVID-19.")
+        print("( 3 ) Lista dos dez países com maior número total de óbitos por COVID-19.")
+        print("( 4 ) Lista dos dez países com maior número total de casos de COVID-19.")
+        print("( 5 ) Sair")
+        print(120 * "-")
+        print("")
+        try:
+            opcao = int(input("Opcao: "))
+            if opcao == 1:
+                print('\n', dadosCovid.getTopNewConfirmedSQL(), '\n')
+                csv = input('Gostaria de salvar o resultado em um CSV ? (s/n) ')
+                if csv.lower() == 's':
+                    dadosCovid.getTopNewConfirmedSQL().to_csv(f'csv\\CasosDiarios_{data_atual}.csv', sep='|')
 
-    def data(self):
-        url = 'https://api.covid19api.com/summary'
-        api = API()
-        self.result = api.getDataAPI(url)
-        return self.result;
-    
-    def allData(self):
-        url = 'https://api.covid19api.com/all'
-        api = API()
-        self.result = api.getDataAPI(url)
-        return self.result;
+                resp = input('Deseja voltar ao Menu? (s/n)\n')
+                start = True if resp.lower() == 's' else False
+            if opcao == 2:
+                print('\n', dadosCovid.getTopNewDeathsSQL(), '\n')
+                csv = input('Gostaria de salvar o resultado em um CSV ? (s/n) ')
+                if csv == 's':
+                    dadosCovid.getTopNewDeathsSQL().to_csv(f'csv\\MortesDiarias_{data_atual}.csv', sep='|')
 
-    
+                resp = input('Deseja voltar ao Menu? (s/n)\n')
+                start = True if resp.lower() == 's' else False
+            if opcao == 3:
+                print('\n', dadosCovid.getTopDeaths(), '\n')
+                csv = input('Gostaria de salvar o resultado em um CSV ? (s/n) ')
+                if csv == 's':
+                    dadosCovid.getTopDeaths().to_csv(f'csv\\MortesTotal_{data_atual}.csv', sep='|')
 
-    """def __init__(self, json_covid=None):
-        #self.updateToday()
+                resp = input('Deseja voltar ao Menu? (s/n)\n')
+                start = True if resp.lower() == 's' else False
+            if opcao == 4:
+                print('\n', dadosCovid.getTopConfirmed(), '\n')
+                csv = input('Gostaria de salvar o resultado em um CSV ? (s/n) ')
+                if csv == 's':
+                    dadosCovid.getTopConfirmed().to_csv(f'csv\\CasosTotal_{data_atual}.csv', sep='|')
 
-    def updateToday(self):
-        result = self.countries();
-        countries = result   
-      
-        current_result = self.data();
-        current_data = current_result['Countries'] 
-        
-        for country in countries:
-            id_country   = country['ISO2'];            
-            name_country = str(country['Country']);
-            #consult = Database()
-            #consult.executeDatabase("SELECT * FROM COUNTRIES WHERE id_country = ?", id_country)
-            #exist = consult.cursor.fetchone()
-            #if exist is None:
-              #consult.executeDatabase("INSERT INTO COUNTRIES VALUES (?, ?)", id_country, name_country)                
-              for current_country in current_data:
-                totalConfirmed = int(current_country["TotalConfirmed"])
-                totalDeaths = int(current_country["TotalDeaths"])
-                if current_country["CountryCode"] == id_country:                
-                  #consult.executeDatabase("INSERT INTO DATA_COVID (TotalConfirmed, TotalDeaths, id_country ) VALUES (?, ?, ?)", current_country['TotalConfirmed'], current_country["TotalDeaths"], id_country) 
-                  break               
-            #else:
-              #consult.executeDatabase("UPDATE DATA_COVID SET TotalConfirmed = ?, TotalDeaths = ? WHERE id_country = ?", current_country['TotalConfirmed'], current_country["TotalDeaths"], id_country) 
-    def topTen(self):
-      #consult = Database()
-      topCountries = consult.executeDatabase("SELECT DATA.id_country FROM DATA_COVID AS DATA, COUNTRIES WHERE DATA.id_country = COUNTRIES._id_country ORDER BY TotalConfirmed LIMIT = 10")
-      for row in topCountries.fetchall():
-        top_countries.append(row);
+                resp = input('Deseja voltar ao Menu? (s/n)\n')
+                start = True if resp.lower() == 's' else False
+            if opcao == 5:
+                start = False
+        except Exception:
+            print("Opção invalida!\n")
 
-    def getTopDeaths(self):
-      self.topTen()
-      result =f"";
-      for country in top_countries.fetchall():
-        for current_country in current_data:          
-          if current_country["CountryCode"] == country:  
-            result += f"{current_country['Country']} Total de mortes é {current_data['TotalDeaths']} \n"
-            break
-      return result;"""
+        if opcao != 5:
+            time.sleep(1)
 
-    def getTopConfirmed(self):
-      self.topTen()
-      result =f"";
-      for country in top_countries.fetchall():
-        for current_country in current_data:          
-          if current_country["CountryCode"] == country:  
-            result += f"{current_country['Country']} Total de casos confirmados é {current_data['TotalConfirmed']} \n"
-            break
-      return result;
-
-    def getTopNewDeaths(self):
-      self.topTen()
-      result =f"";
-      for country in top_countries.fetchall():
-        for current_country in current_data:          
-          if current_country["CountryCode"] == country:  
-            result += f"{current_country['Country']} Número de novas mortes é {current_data['NewDeaths']} \n"
-            break
-      return result;
-
-    def getTopNewConfirmed(self):
-      self.topTen()
-      result =f"";
-      for country in top_countries.fetchall():
-        for current_country in current_data:          
-          if current_country["CountryCode"] == country:  
-            result += f"{current_country['Country']} Número de novos casos confirmados é {current_data['NewConfirmed']} \n"
-            break
-      return result;
-            
-
-        
-teste = dataCovid().allData()
-
-print(teste[0])
-#print(teste[10]['ISO2'])
-#print(teste[10]['Country'])
-
-#Database.connect
+    os.system('cls')
+    print('Obrigado por usar o nosso programa.\nTodos os direitos reservados a equipe DataHeroes do curso GamaAcademy.')
