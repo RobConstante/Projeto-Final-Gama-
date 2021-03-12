@@ -27,9 +27,9 @@ if __name__ == "__main__":
 
     start = True
     data_atual = date.today()
+    dadosCovid = DataCovid()
     while start:
         os.system('cls')
-        dadosCovid = DataCovid()
         print(120 * "-")
         print("|", "COVID-19", "|", sep=55 * " ", end="\n" + 120 * "-" + "\n")
         print("( 1 ) Evolução diária dos dez países com maior número de casos de COVID-19.")

@@ -114,3 +114,119 @@ US Minor Outlying Islands
 Virgin Islands, US
 Wallis and Futuna Islands
 Western Sahara
+ALA Aland Islands
+American Samoa
+Anguilla
+Antarctica
+Aruba
+Bermuda
+Bouvet Island
+British Indian Ocean Territory
+British Virgin Islands
+Cayman Islands
+Christmas Island
+Cocos (Keeling) Islands
+Cook Islands
+Falkland Islands (Malvinas)
+Faroe Islands
+French Guiana
+French Polynesia
+French Southern Territories
+Gibraltar
+Greenland
+Guadeloupe
+Guam
+Guernsey
+Heard and Mcdonald Islands
+Hong Kong, SAR China
+Isle of Man
+Jersey
+Kiribati
+Korea (North)
+Macao, SAR China
+Martinique
+Mayotte
+Montserrat
+Nauru
+Netherlands Antilles
+New Caledonia
+Niue
+Norfolk Island
+Northern Mariana Islands
+Palau
+Pitcairn
+Puerto Rico
+Réunion
+Saint Helena
+Saint Pierre and Miquelon
+Saint-Barthélemy
+Saint-Martin (French part)
+South Georgia and the South Sandwich Islands
+Svalbard and Jan Mayen Islands
+Tokelau
+Tonga
+Turkmenistan
+Turks and Caicos Islands
+Tuvalu
+US Minor Outlying Islands
+Virgin Islands, US
+Wallis and Futuna Islands
+Western Sahara
+ALA Aland Islands
+American Samoa
+Anguilla
+Antarctica
+Aruba
+Bermuda
+Bouvet Island
+British Indian Ocean Territory
+British Virgin Islands
+Cayman Islands
+Christmas Island
+Cocos (Keeling) Islands
+Cook Islands
+Falkland Islands (Malvinas)
+Faroe Islands
+French Guiana
+French Polynesia
+French Southern Territories
+Gibraltar
+Greenland
+Guadeloupe
+Guam
+Guernsey
+Heard and Mcdonald Islands
+Hong Kong, SAR China
+Isle of Man
+Jersey
+Kiribati
+Korea (North)
+Macao, SAR China
+Martinique
+Mayotte
+Montserrat
+Nauru
+Netherlands Antilles
+New Caledonia
+Niue
+Norfolk Island
+Northern Mariana Islands
+Palau
+Pitcairn
+Puerto Rico
+Réunion
+Saint Helena
+Saint Pierre and Miquelon
+Saint-Barthélemy
+Saint-Martin (French part)
+South Georgia and the South Sandwich Islands
+Svalbard and Jan Mayen Islands
+Tokelau
+Tonga
+Turkmenistan
+Turks and Caicos Islands
+Tuvalu
+US Minor Outlying Islands
+Virgin Islands, US
+Wallis and Futuna Islands
+Western Sahara
