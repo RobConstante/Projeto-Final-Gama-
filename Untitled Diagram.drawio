@@ -1,14 +1,14 @@
-<mxfile host="app.diagrams.net" modified="2021-03-13T01:42:30.641Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36 OPR/74.0.3911.203" etag="fndjqHgoHSvCdwumQBz-" version="14.4.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-13T01:54:20.475Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36 OPR/74.0.3911.203" etag="Ej5uJA7aMPcrLH5c5WpV" version="14.4.7" type="github">
   <diagram id="Rh4_9mQIcKR6ZL9h0nzi" name="Page-1">
-    <mxGraphModel dx="822" dy="452" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="967" dy="532" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="ZsBO5cZFyfEsSncGkevy-14" value="" style="whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=#ffffff;labelBorderColor=#000000;textOpacity=0;" vertex="1" parent="1">
-          <mxGeometry x="390" y="40" width="440" height="258" as="geometry" />
+          <mxGeometry x="390" y="40" width="440" height="320" as="geometry" />
         </mxCell>
         <mxCell id="ZsBO5cZFyfEsSncGkevy-20" value="" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="550" y="88" width="280" height="210" as="geometry" />
+          <mxGeometry x="550" y="88" width="280" height="272" as="geometry" />
         </mxCell>
         <mxCell id="ZsBO5cZFyfEsSncGkevy-2" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Databricks.svg;" vertex="1" parent="1">
           <mxGeometry x="525" y="56" width="50" height="48" as="geometry" />
@@ -68,10 +68,64 @@
           <mxGeometry x="220" y="88" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ZsBO5cZFyfEsSncGkevy-23" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Files.svg;labelBackgroundColor=none;" vertex="1" parent="1">
-          <mxGeometry x="600" y="118.77000000000001" width="37" height="40.46" as="geometry" />
+          <mxGeometry x="746" y="126.77000000000001" width="37" height="40.46" as="geometry" />
         </mxCell>
         <mxCell id="ZsBO5cZFyfEsSncGkevy-24" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Files.svg;labelBackgroundColor=none;" vertex="1" parent="1">
-          <mxGeometry x="600" y="190" width="37" height="40.5" as="geometry" />
+          <mxGeometry x="746" y="198" width="37" height="40.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-25" value="Raw Tables&lt;br&gt;Json Files" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="737.5" y="168" width="71.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-26" value="Ready Tables&lt;br&gt;Parquet Files" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="742" y="240" width="71.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-27" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Databricks.svg;" vertex="1" parent="1">
+          <mxGeometry x="648" y="120" width="45" height="43.2" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-28" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Databricks.svg;" vertex="1" parent="1">
+          <mxGeometry x="648" y="200" width="45" height="43.2" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-29" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Databricks.svg;" vertex="1" parent="1">
+          <mxGeometry x="648" y="280" width="45" height="43.2" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-30" value="" style="endArrow=classic;html=1;fontSize=11;exitX=1.009;exitY=0.568;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="ZsBO5cZFyfEsSncGkevy-27" target="ZsBO5cZFyfEsSncGkevy-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="687.5" y="154" as="sourcePoint" />
+            <mxPoint x="737.5" y="104" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-31" value="" style="endArrow=classic;html=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="688" y="223" as="sourcePoint" />
+            <mxPoint x="747" y="223" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-32" value="" style="endArrow=classic;html=1;fontSize=11;" edge="1" parent="1" source="ZsBO5cZFyfEsSncGkevy-23" target="ZsBO5cZFyfEsSncGkevy-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="668" y="280" as="sourcePoint" />
+            <mxPoint x="718" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-33" value="" style="endArrow=classic;html=1;fontSize=11;" edge="1" parent="1" source="ZsBO5cZFyfEsSncGkevy-24" target="ZsBO5cZFyfEsSncGkevy-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="737.5" y="270.001914893617" as="sourcePoint" />
+            <mxPoint x="684.5" y="312.06361702127657" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-34" value="Visualização" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="639" y="260" width="62.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-35" value="Transformação" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="648" y="180" width="42.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-36" value="Ingestão" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="645.5" y="98" width="47.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-37" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="615" y="150" width="20" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-38" value="Notebooks" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="210" width="50" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
