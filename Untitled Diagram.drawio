@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-13T01:26:28.611Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36 OPR/74.0.3911.203" etag="OX7P1uNxZ8Ca8SVORuaV" version="14.4.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-13T01:29:01.672Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36 OPR/74.0.3911.203" etag="pzKO4t24gw1i_I2ncM_V" version="14.4.7" type="github">
   <diagram id="Rh4_9mQIcKR6ZL9h0nzi" name="Page-1">
     <mxGraphModel dx="822" dy="452" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -6,6 +6,9 @@
         <mxCell id="1" parent="0" />
         <mxCell id="ZsBO5cZFyfEsSncGkevy-14" value="" style="whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=#ffffff;labelBorderColor=#000000;textOpacity=0;" vertex="1" parent="1">
           <mxGeometry x="390" y="62" width="440" height="258" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-20" value="" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="550" y="110" width="280" height="210" as="geometry" />
         </mxCell>
         <mxCell id="ZsBO5cZFyfEsSncGkevy-2" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Databricks.svg;" vertex="1" parent="1">
           <mxGeometry x="550" y="107" width="50" height="48" as="geometry" />
@@ -46,8 +49,8 @@
         <mxCell id="ZsBO5cZFyfEsSncGkevy-15" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/internet_cloud.svg;labelBackgroundColor=#ffffff;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="389" y="30.5" width="50" height="31.5" as="geometry" />
         </mxCell>
-        <mxCell id="ZsBO5cZFyfEsSncGkevy-17" value="Armazenamento" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#ffffff;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="380" y="151" width="150" height="20" as="geometry" />
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-17" value="Azure SQL Server" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="148" width="150" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ZsBO5cZFyfEsSncGkevy-18" value="Cloud" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="390" y="36.25" width="40" height="20" as="geometry" />
