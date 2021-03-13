@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2021-03-13T01:08:27.900Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36 OPR/74.0.3911.203" etag="vTTnQc3gMGdAv_sIPQ8G" version="14.4.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-13T01:20:18.849Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36 OPR/74.0.3911.203" etag="ihfxQ0odRTQpQoDJOj3v" version="14.4.7" type="github">
   <diagram id="Rh4_9mQIcKR6ZL9h0nzi" name="Page-1">
     <mxGraphModel dx="822" dy="452" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-14" value="" style="whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=#ffffff;labelBorderColor=#000000;textOpacity=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="62" width="350" height="210" as="geometry" />
+        </mxCell>
         <mxCell id="ZsBO5cZFyfEsSncGkevy-2" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Databricks.svg;" vertex="1" parent="1">
           <mxGeometry x="630" y="143" width="50" height="48" as="geometry" />
         </mxCell>
@@ -11,7 +14,7 @@
           <mxGeometry x="30" y="100" width="70" height="78" as="geometry" />
         </mxCell>
         <mxCell id="ZsBO5cZFyfEsSncGkevy-6" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_database_sql_azure;" vertex="1" parent="1">
-          <mxGeometry x="460" y="136" width="47.5" height="50" as="geometry" />
+          <mxGeometry x="440" y="120" width="47.5" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ZsBO5cZFyfEsSncGkevy-8" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/oxygen/64x64/mimetypes/text-x-python.png" vertex="1" parent="1">
           <mxGeometry x="210" y="107" width="64" height="64" as="geometry" />
@@ -24,6 +27,18 @@
         </mxCell>
         <mxCell id="ZsBO5cZFyfEsSncGkevy-10" value="API de Dados Covid&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="10" y="191" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-12" value="&lt;h1 style=&quot;font-size: 11px;&quot;&gt;Leitura/Ingestão&lt;/h1&gt;&lt;p style=&quot;font-size: 11px;&quot;&gt;Aplicação de leitura de dados da API para BD SQL Server na nuvem.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="170" y="170" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZsBO5cZFyfEsSncGkevy-13" value="" style="endArrow=classic;startArrow=classic;html=1;fontSize=11;" edge="1" parent="1" source="ZsBO5cZFyfEsSncGkevy-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="250" as="sourcePoint" />
+            <mxPoint x="390" y="140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="310" y="140" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
